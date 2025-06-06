@@ -3,62 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>For Raisya ❤️</title>
+  <title>To Raisya 💖</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
-      background: radial-gradient(circle at top left, #ffe0ec, #ffb6c1, #ff6f91);
+      background: radial-gradient(ellipse at center, #ffe6f0 0%, #ff99cc 100%);
       overflow: hidden;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Segoe Script', cursive;
+      flex-direction: column;
+      font-family: 'Courier New', Courier, monospace;
     }
 
-    h1 {
-      position: relative;
-      color: white;
-      font-size: 3rem;
-      animation: glow 2s ease-in-out infinite, bounce 3s infinite ease-in-out;
+    #message {
+      font-size: 1.6rem;
+      color: #fff;
+      text-shadow: 0 0 10px #ff66aa;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 10s steps(65, end) forwards, blink 1s step-end infinite;
       text-align: center;
-      padding: 20px;
+      padding: 0 20px;
     }
 
-    @keyframes glow {
-      0%, 100% {
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
-      }
-      50% {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
-      }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 60ch }
     }
 
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white }
     }
 
     .heart {
       position: absolute;
       width: 20px;
       height: 20px;
-      background: #ff69b4;
+      background: #ff4da6;
       transform: rotate(45deg);
-      animation: float 8s infinite ease-in;
+      animation: floatUp 6s infinite ease-in-out;
+      opacity: 0.8;
     }
 
     .heart::before,
     .heart::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 20px;
       height: 20px;
-      background: #ff69b4;
+      background: #ff4da6;
       border-radius: 50%;
     }
 
@@ -68,34 +66,38 @@
     }
 
     .heart::after {
-      left: -10px;
       top: 0;
+      left: -10px;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        bottom: -20px;
+        bottom: -50px;
         opacity: 0;
+        transform: translateX(0) scale(1) rotate(45deg);
       }
       50% {
         opacity: 1;
       }
       100% {
         bottom: 110%;
-        transform: rotate(45deg) scale(1.2);
         opacity: 0;
+        transform: translateX(50px) scale(1.2) rotate(45deg);
       }
     }
 
-    /* Floating hearts with unique positions */
-    .heart:nth-child(2) { left: 20%; animation-delay: 0s; }
-    .heart:nth-child(3) { left: 40%; animation-delay: 2s; }
-    .heart:nth-child(4) { left: 60%; animation-delay: 4s; }
-    .heart:nth-child(5) { left: 80%; animation-delay: 6s; }
+    .heart:nth-child(2) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(3) { left: 30%; animation-delay: 1s; }
+    .heart:nth-child(4) { left: 50%; animation-delay: 2s; }
+    .heart:nth-child(5) { left: 70%; animation-delay: 3s; }
+    .heart:nth-child(6) { left: 90%; animation-delay: 4s; }
   </style>
 </head>
 <body>
-  <h1>To Raisya,<br>You're the beat of my heart ❤️</h1>
+  <div id="message">Hi sayang... I hope you’ll accept me into your life. My heart is already yours. I love you deeply, and I promise to take care of you, always. Please... be mine. 💗</div>
+
+  <!-- Floating Hearts -->
+  <div class="heart"></div>
   <div class="heart"></div>
   <div class="heart"></div>
   <div class="heart"></div>
