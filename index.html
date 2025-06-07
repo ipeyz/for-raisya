@@ -1,9 +1,10 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>To Raisya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -70,24 +71,39 @@
     .bird {
       position: fixed;
       top: 120px;
-      left: -100px;
+      left: -80px;
       width: 60px;
       height: 60px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/3/32/Flying_bird_icon.png') no-repeat center/contain;
+      z-index: 10;
       animation: flyAcross 15s linear infinite;
-      z-index: 1;
       opacity: 0.9;
     }
     @keyframes flyAcross {
-      0% { transform: translateX(0) scale(1); top: 120px; }
-      50% { transform: translateX(50vw) scale(1.1); top: 100px; }
-      100% { transform: translateX(100vw) scale(1); top: 120px; }
+      0% {
+        transform: translateX(0) scale(1) rotate(0deg);
+        top: 120px;
+      }
+      50% {
+        transform: translateX(50vw) scale(1.1) rotate(10deg);
+        top: 100px;
+      }
+      100% {
+        transform: translateX(100vw) scale(1) rotate(0deg);
+        top: 120px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="moon"></div>
-  <div class="bird"></div>  <div class="letter-box">
+
+  <div class="bird">
+    <svg viewBox="0 0 64 64" width="60" height="60" fill="white" xmlns="http://www.w3.org/2000/svg" >
+      <path d="M2 32c10-10 20-10 30 0 10-10 20-10 30 0-10 10-20 10-30 0-10 10-20 10-30 0z" />
+    </svg>
+  </div>
+
+  <div class="letter-box">
     <h1>To Raisya,</h1>
     <p>
       From the moment I got to know you, something in my world changed. It’s hard to explain, but your presence brings a kind of calm and happiness I didn’t know I needed.
@@ -104,10 +120,14 @@
     <p>
       You’re special, Raisya. And I hope this little letter makes you smile, even just a little.
     </p>
-  </div>  <audio controls autoplay loop>
-    <source src="your-music-file.mp3" type="audio/mpeg">
+  </div>
+
+  <audio controls autoplay loop>
+    <source src="your-music-file.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
-  </audio>  <script>
+  </audio>
+
+  <script>
     function createSnowflake() {
       const snowflake = document.createElement('div');
       snowflake.classList.add('snowflake');
@@ -120,5 +140,6 @@
       setTimeout(() => snowflake.remove(), 10000);
     }
     setInterval(createSnowflake, 100);
-  </script></body>
+  </script>
+</body>
 </html>
