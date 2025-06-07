@@ -1,32 +1,105 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-<title>Raisya Animation</title>
-<style>
-body {
-  background-color: #f0f0f0; /* Light gray background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-#name {
-  font-size: 4em;
-  font-family: cursive; /* Or any font you like */
-  color: #ff69b4; /* Pink */
-  animation: colorChange 5s infinite; /* Adjust duration and repeat */
-}
-
-@keyframes colorChange {
-  0% { color: #ff69b4; } /* Pink */
-  50% { color: #ffb6c1; } /* Light Pink */
-  100% { color: #ff69b4; } /* Pink */
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Raisya</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      background: #001d3d;
+      color: #fff;
+    }
+    .moon {
+      position: absolute;
+      top: 50px;
+      right: 100px;
+      width: 100px;
+      height: 100px;
+      background: #fefcd7;
+      border-radius: 50%;
+      box-shadow: 0 0 60px 20px #fefcd7;
+    }
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #fff;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 500px;
+      text-align: left;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    audio {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
 </head>
 <body>
-<div id="name">Raisya</div>
-</body>
+  <div class="moon"></div>
+  <div class="container">
+    <h1>To Raisya,</h1>
+    <p>
+      From the moment I got to know you, something in my world changed. It’s hard to explain,
+      but your presence brings a kind of calm and happiness I didn’t know I needed.
+    </p>
+    <p>
+      Texting you was the best thing I could've done. It has the power to make my worst days better and my good days even brighter.
+      And the way you carry yourself, with such grace and kindness, inspires me more than you’ll ever know.
+    </p>
+    <p>
+      I may not always have the perfect words, but please know this: you mean a lot to me. I admire you not just for your beauty,
+      but for your heart, your thoughts, and the way you make people around you feel seen and appreciated.
+    </p>
+    <p>
+      If I could make one wish, it would be to always be someone who makes you feel cherished, respected, and truly happy.
+      No pressure, no expectations—just me being here for you, in the most sincere way.
+    </p>
+    <p>
+      You’re special, Raisya. And I hope this little letter makes you smile, even just a little.
+    </p>
+  </div>  <audio controls autoplay loop>
+    <source src="your-music-file.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>  <script>
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      const size = Math.random() * 5 + 2 + 'px';
+      snowflake.style.width = size;
+      snowflake.style.height = size;
+      snowflake.style.left = Math.random() * window.innerWidth + 'px';
+      snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      snowflake.style.opacity = Math.random();
+      snowflake.style.top = '-10px';
+      document.body.appendChild(snowflake);
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000);
+    }
+    setInterval(createSnowflake, 100);
+  </script></body>
 </html>
