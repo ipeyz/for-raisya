@@ -13,12 +13,12 @@
     body {
       font-family: 'Playfair Display', serif;
       background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
       color: #fff;
     }
     .moon {
-      position: absolute;
+      position: fixed;
       top: 50px;
       right: 100px;
       width: 120px;
@@ -38,10 +38,8 @@
       z-index: 9999;
     }
     .letter-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      margin: 150px auto 100px;
       width: 90%;
       max-width: 700px;
       background: rgba(255, 255, 255, 0.07);
@@ -49,7 +47,6 @@
       border-radius: 20px;
       padding: 40px;
       backdrop-filter: blur(10px);
-      animation: fadeIn 2s ease-out;
       z-index: 2;
     }
     .letter-box h1 {
@@ -63,10 +60,6 @@
       margin-bottom: 16px;
       text-align: justify;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translate(-50%, -60%); }
-      to { opacity: 1; transform: translate(-50%, -50%); }
-    }
     audio {
       position: fixed;
       bottom: 20px;
@@ -74,11 +67,27 @@
       transform: translateX(-50%);
       z-index: 3;
     }
+    .bird {
+      position: fixed;
+      top: 120px;
+      left: -100px;
+      width: 60px;
+      height: 60px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/3/32/Flying_bird_icon.png') no-repeat center/contain;
+      animation: flyAcross 15s linear infinite;
+      z-index: 1;
+      opacity: 0.9;
+    }
+    @keyframes flyAcross {
+      0% { transform: translateX(0) scale(1); top: 120px; }
+      50% { transform: translateX(50vw) scale(1.1); top: 100px; }
+      100% { transform: translateX(100vw) scale(1); top: 120px; }
+    }
   </style>
 </head>
 <body>
   <div class="moon"></div>
-  <div class="letter-box">
+  <div class="bird"></div>  <div class="letter-box">
     <h1>To Raisya,</h1>
     <p>
       From the moment I got to know you, something in my world changed. It’s hard to explain, but your presence brings a kind of calm and happiness I didn’t know I needed.
